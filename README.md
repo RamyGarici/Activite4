@@ -1,3 +1,4 @@
 # Activite4
 TIC-Activite4
-La liste des étudiants est sur la page accueuil
+Le site est sur 6 pages 
+La premiere pgae contient la liste des étudiants et les 5 autres contiennent les chapitres.
