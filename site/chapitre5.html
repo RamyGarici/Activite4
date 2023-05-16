@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+  <title>Chapitre 5 - Résumés TIC</title>
+  <style>
+    body {
+      background-color: #CCABD8;
+      color: #333333;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    .menu {
+      background-color: #333333;
+      color: #ffffff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .menu a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+        width: 60%;
+  height: auto;
+    }
+
+    
+  
+
+    .image-side {
+      float: right;
+      margin: 0 0 10px 10px;
+        width: 50%;
+  height: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <a href="index.html">Accueil</a>
+    <a href="chapitre1.html">Chapitre 1</a>
+    <a href="chapitre2.html">Chapitre 2</a>
+    <a href="chapitre3.html">Chapitre 3</a>
+    <a href="chapitre4.html">Chapitre 4</a>
+    <a href="chapitre5.html">Chapitre 5</a>
+  </div>
+
+  <h1>Chapitre 5: Système de Gestion
+de Version</h1>
+
+  
+  <img src="image/chap5.png" alt="Image chapitre 1 sur le côté" class="image-side">
+
+  
+  
+  <h3>Git:</h3>
+<p>Git est un logiciel de gestion de versions créé par Linus Torvalds en 2005. Il est essentiel pour la gestion efficace des projets et facilite la collaboration entre les membres d'une équipe. En tant que développeur, il est indispensable de savoir utiliser Git pour tirer pleinement parti de ses fonctionnalités 
+tel que :la conservation des historiques et modifications effectuées sur un projet et bénéficier de son leadership dans le domaine des logiciels.</p>
+
+ <h4>Le rôle d'un système de gestion de version:</h4>
+<p>Un système de gestion de version, tel que Git, permet de conserver un historique des modifications apportées à un projet, l'utilisation d'un système de gestion de version comme Git devient essentielle lorsque plusieurs personnes travaillent sur un même projet. Il permet de garantir que chaque développeur dispose d'une version à jour du projet, de suivre les modifications apportées, d'identifier les auteurs des changements et de fusionner les différentes versions des fichiers de manière automatisée.</p>
+
+<h4>Les deux modèles des logiciels de gestion de version :</h4>
+<p>le modèle centralisé centralise le code source sur un serveur distant, tandis que le modèle décentralisé permet à chaque utilisateur d'avoir une copie complète du code sur sa propre machine. Le modèle décentralisé offre plus de flexibilité et de sécurité en permettant aux utilisateurs de travailler localement et en utilisant leurs copies du projet comme sauvegarde.</p>
+
+<h3>GitHub:</h3>
+<p>GitHub est un service en ligne qui héberge les dépôts Git, agissant en tant que serveur central pour ces dépôts.</p>
+
+<h3>Paramétrage du Git :</h3>
+<p>Une fois Git installé, il est important de le configurer en renseignant certaines informations pour éviter de les saisir à nouveau ultérieurement. Cela comprend le nom d'utilisateur et l'adresse e-mail que Git utilisera.
+La commande principale utilisée pour cela est `git config`, qui permet de visualiser et de modifier les variables de configuration de Git. Pour indiquer que les informations fournies doivent être utilisées de manière globale pour tous les projets Git, l'option `--global` est utilisée.</p>
+<p>```</p>
+<p>git config --global user.name "ID"</p>
+<p>git config --global user.email name@gmail.com</p>
+<p>```</p>
+<p>Ces commandes permettent de définir votre nom d'utilisateur et votre adresse e-mail pour une utilisation globale dans tous les projets Git. Assurez-vous de les personnaliser avec vos propres informations(ID et le mail).</p>
+
+<p>Pour démarrer un dépôt Git, on peut soit importer un répertoire existant en utilisant git init, soit cloner un dépôt Git existant en utilisant git clone. Il est important de comprendre le fonctionnement général de Git, notamment le concept de commit, pour utiliser efficacement Git.</p>
+
+<h3>La gestion des informations selon Git:</h3>
+<p>La particularité de Git est que vous disposez de l'historique complet du projet localement, ce qui signifie que la plupart des opérations Git peuvent être effectuées en local, sans avoir besoin d'être connecté à un serveur central distant. Cela rend les opérations beaucoup plus rapides et facilite le travail en général.</p>
+<p>Cette approche de gestion des données par instantanés contribue à la rapidité et à l'efficacité de Git, permettant aux développeurs de travailler de manière fluide et agréable, même sur de gros projets.</p>
+
+<h3>Les états des fichiers:</h3>
+<p>Dans Git, un fichier peut se trouver dans l'un des deux états principaux : suivi ou non suivi de version.
+Un fichier est considéré comme "suivi" s'il appartenait au dernier instantané enregistré par Git, c'est-à-dire s'il est stocké dans la base de données de Git. Un fichier qui n'appartenait pas au dernier instantané et qui n'a pas été indexé est considéré comme "non suivi".
+Lorsque vous démarrez un dépôt Git en important un répertoire déjà existant, tous les fichiers sont initialement non suivis. Vous devez donc demander à Git de les indexer et de les valider (les enregistrer dans la base de données). En revanche, lorsque vous clonez un dépôt Git existant, tous les fichiers sont déjà suivis par défaut car vous copiez tout l'historique du projet.</p>
+<p>Ensuite, chaque fichier suivi peut avoir l'un des trois états suivants :</p>
+<p>- "Modifié" : lorsque vous apportez des modifications à un fichier existant.</p>
+<p>- "Indexé" : lorsque vous ajoutez un fichier modifié ou un nouveau fichier à l'index de Git en vue de la prochaine validation.</p>
+<p>- "Validé" : lorsque vous effectuez une validation, en enregistrant l'état actuel des fichiers indexés dans la base de données de Git.</p>
+<p>Lorsque vous démarrez un dépôt Git à partir d'un dépôt local, vous demandez à Git de valider tous les fichiers du projet. Lorsque vous clonez un dépôt existant, les fichiers sont déjà validés par défaut, car vous copiez tout l'historique.
+Lorsque vous travaillez sur votre projet, vous pouvez ajouter de nouveaux fichiers ou modifier des fichiers existants. Les fichiers modifiés sont considérés comme "modifiés" par Git tant qu'ils n'ont pas été indexés. Les nouveaux fichiers sont considérés comme "non suivis".
+L'indexation d'un fichier consiste à indiquer à Git que le fichier modifié ou le nouveau fichier doit être inclus dans le prochain instantané, dans sa version actuelle.</p>
+<p>Enfin, lorsque vous demandez à Git de prendre un instantané en effectuant une validation, les fichiers qui font partie de l'instantané sont à nouveau considérés comme "validés". Le cycle peut alors recommencer avec de nouveaux fichiers modifiés ou non suivis.
+Ce processus permet à Git de suivre les modifications des fichiers dans un projet et de maintenir un historique précis des différentes versions.</p>
+
+<h3>Les zones de travail:</h3>
+<p>le répertoire de travail est l'endroit où vous effectuez vos modifications et travailler sur les fichiers. La zone d'index est utilisée pour préparer les fichiers modifiés à être inclus dans le prochain instantané. Le répertoire Git est l'endroit où l'historique complet du projet est stocké. Ce système de zones de travail permet à Git de gérer efficacement les modifications et de maintenir un historique précis du projet.</p>
+
+<h3>Créer un dépôt Git à partir d’un répertoire existant:</h3>
+<p>Pour créer un dépôt Git à partir d'un répertoire existant, vous devez suivre les étapes suivantes :</p>
+<p>1. Ouvrez une fenêtre de terminal ou une interface de ligne de commande dans le répertoire que vous souhaitez convertir en dépôt Git.</p>
+<p>2. Utilisez la commande `git init` pour initialiser un nouveau dépôt Git dans ce répertoire :</p>
+   git init</p>
+<p>3. Cela va créer un répertoire `.git` caché qui contiendra tous les fichiers et les informations de suivi de Git pour ce dépôt.</p>
+<p>4. Ajoutez les fichiers existants du répertoire à l'index de Git en utilisant la commande `git add` suivie du nom des fichiers que vous souhaitez ajouter. Par exemple, pour ajouter tous les fichiers, vous pouvez utiliser :
+   git add .</p>
+<p>5. Utilisez la commande `git commit` pour créer un nouvel instantané (commit) contenant les fichiers ajoutés à l'index :
+   git commit -m "Premier commit"</p>
+   Assurez-vous de fournir un message descriptif entre les guillemets pour indiquer le contenu de ce premier commit.
+Cloner un fichier Git:
+
+<p>Pour cloner un dépôt Git existant, suivez ces étapes :</p>
+<p>1. Ouvrez une fenêtre de terminal ou une interface de ligne de commande dans le répertoire où vous souhaitez cloner le dépôt.
+<p>2. Utilisez la commande git clone suivie de l'URL du dépôt Git que vous souhaitez cloner.</p>
+git clone 
+Remplacez  par l'URL du dépôt que vous souhaitez cloner.
+<p>3. Appuyez sur Entrée et Git va commencer à télécharger les fichiers du dépôt distant et créer une copie locale complète du dépôt.</p>
+<p>4. Une fois le clonage terminé, vous pouvez accéder au répertoire du dépôt cloné en utilisant la commande cd.</p>
+
+<p>Ajouter ou modifier des fichiers dans un projet et actualiser notre dépôt Git:</p>
+<p>Lorsque vous souhaitez enregistrer des modifications ou des ajouts de fichiers dans votre dépôt Git, utilisez les commandes git add et git commit comme expliqué précédemment. Voici quelques points importants à retenir :</p>
+<p>5. Utilisez la commande git add pour mettre les fichiers modifiés ou les nouveaux fichiers sous suivi dans la zone d'index (staging area) avant de les valider.</p>
+<p>6. Lorsque vous exécutez git commit, les fichiers qui ont été précédemment ajoutés avec git add seront inclus dans le commit.</p>
+<p>7. Le contenu des fichiers ajoutés avec git add sera enregistré tel qu'il était au moment de l'exécution de cette commande. Toute modification apportée à ces fichiers après git add ne sera pas incluse dans le commit à moins que vous n'exécutiez à nouveau git add pour mettre à jour la version du fichier dans la zone d'index.</p>
+<p>8. Pour éviter d'exécuter git add séparément avant chaque commit, vous pouvez utiliser la commande git commit -a qui ajoutera et validera automatiquement tous les fichiers modifiés et déjà sous suivi dans la zone d'index.</p>
+Il est essentiel de comprendre ce comportement afin de s'assurer que les modifications souhaitées sont incluses dans les commits. Pensez toujours à exécuter git add pour mettre à jour la version des fichiers avant d'exécuter git commit, à moins d'utiliser git commit -a pour effectuer les deux actions en une seule commande.</p>
+ 
+<p>Consulter l’historique des modifications Git:</p>
+<p>Utiliser la commande git log qui permet d'afficher la liste des commits réalisés du plus récent au
+plus ancien.</p>
+
+<h3>Annuler des modifications apportées à un fichier:</h3>
+<p>En utilisant commande générale git checkout -- nom-du-fichier ou la nouvelle commande spécialisée git restore.</p>
+
+<h3>Une branche:</h3>
+<p>C'est de créer une “copie” de votre projet pour développer et tester de nouvelles fonctionnalités sans impacter le projet de base.
+Dans Git, une branche est simplement un pointeur vers un commit spécifique, et la création d'une nouvelle branche ne nécessite pas la duplication de l'intégralité du répertoire de travail. Cette approche rend la création et la gestion des branches plus faciles et plus efficaces dans Git.</p>
+</body>
+</html>
